@@ -1,0 +1,68 @@
+### Тестовые HTTP-запросы для API
+### Можно использовать в IntelliJ IDEA, VS Code с расширением REST Client или Postman
+
+### 1. Получить всех пользователей
+GET http://localhost:8080/user-api/v1/users
+Accept: application/json
+
+###
+
+### 2. Добавить нового пользователя
+POST http://localhost:8080/user-api/v1/users
+Content-Type: application/json
+
+{
+  "firstName": "Ivan",
+  "age": 25,
+  "country": "FRANCE"
+}
+
+###
+
+### 3. Добавить еще одного пользователя
+POST http://localhost:8080/user-api/v1/users
+Content-Type: application/json
+
+{
+  "firstName": "Anna",
+  "age": 22,
+  "country": "GERMANY"
+}
+
+###
+
+### 4. Получить пользователей НЕ из России (отсортированных по возрасту)
+GET http://localhost:8080/user-api/v1/additional-info?country=RUSSIA
+Accept: application/json
+
+###
+
+### 5. Получить пользователей НЕ из Франции (отсортированных по возрасту)
+GET http://localhost:8080/user-api/v1/additional-info?country=FRANCE
+Accept: application/json
+
+###
+
+### 6. Получить пользователей НЕ из Германии (отсортированных по возрасту)
+GET http://localhost:8080/user-api/v1/additional-info?country=GERMANY
+Accept: application/json
+
+###
+
+### 7. Добавить пользователя с другой страной
+POST http://localhost:8080/user-api/v1/users
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "age": 30,
+  "country": "UNITED_KINGDOM"
+}
+
+###
+
+### 8. Получить пользователей НЕ из Великобритании
+GET http://localhost:8080/user-api/v1/additional-info?country=UNITED_KINGDOM
+Accept: application/json
+
+### 
